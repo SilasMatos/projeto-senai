@@ -8,7 +8,7 @@ import LinksSection from './components/Links/LinksSection'
 import InfoSection from './components/Info/InfoSection'
 import Footer from './components/Footer/Footer'
 
-function App() {
+function LandingPage() {
   return (
     <div className="App">
       <Header />
@@ -23,4 +23,4 @@ function App() {
   )
 }
 
-export default App
+export default LandingPage
