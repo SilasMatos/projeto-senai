@@ -1,19 +1,19 @@
-import React from 'react';
+import React from 'react'
 
 // Define a interface para as propriedades de cada item do banner
 interface BannerItemProps {
-  imageUrl: string;
-  title: string;
+  imageUrl: string
+  title: string
 }
 
 // Componente para um item individual do banner
 const BannerItem: React.FC<BannerItemProps> = ({ imageUrl, title }) => {
   return (
     // Ajusta a largura para acomodar 5 itens em telas médias/grandes (md:w-1/5)
-    <div className="relative w-full md:w-1/5 h-[600px] group overflow-hidden"> 
+    <div className="relative w-full md:w-1/5 h-[600px] group overflow-hidden">
       {/* Imagem de fundo */}
       <div
-        className="absolute inset-0 bg-cover bg-center transition-transform duration-300 ease-in-out group-hover:scale-110"
+        className="absolute inset-0 bg-cover bg-center transition-transform duration-300 ease-in-out group-hover:scale-110 "
         // Carrega a imagem da pasta public
         style={{ backgroundImage: `url(${process.env.PUBLIC_URL}${imageUrl})` }}
       ></div>
@@ -31,8 +31,8 @@ const BannerItem: React.FC<BannerItemProps> = ({ imageUrl, title }) => {
         </div>
       </div>
     </div>
-  );
-};
+  )
+}
 
 // Componente principal do Banner
 const Banner: React.FC = () => {
@@ -40,26 +40,26 @@ const Banner: React.FC = () => {
   const bannerItems = [
     {
       imageUrl: '/images/Imagens/001-Comunidade Maker.jpg',
-      title: 'Comunidade Maker',
+      title: 'Comunidade Maker'
     },
     {
       imageUrl: '/images/Imagens/002-Biblioteca Maker.jpg',
-      title: 'Biblioteca Maker',
+      title: 'Biblioteca Maker'
     },
     {
       imageUrl: '/images/Imagens/003-Lab Maker.jpg',
-      title: 'Lab Maker',
+      title: 'Lab Maker'
     },
     {
       imageUrl: '/images/Imagens/004-Reproducao de Projetos.jpg',
-      title: 'Reprodução de Projetos',
+      title: 'Reprodução de Projetos'
     },
     {
       // Adiciona o novo card com a imagem genérica salva
-      imageUrl: '/images/Imagens/005-Oficina-Maker-Generica.jpeg', 
-      title: 'Oficina Criativa', // Título genérico para o novo card
-    },
-  ];
+      imageUrl: '/images/Imagens/005-Oficina-Maker-Generica.jpeg',
+      title: 'Oficina Criativa' // Título genérico para o novo card
+    }
+  ]
 
   return (
     <section className="w-full">
@@ -70,8 +70,7 @@ const Banner: React.FC = () => {
         ))}
       </div>
     </section>
-  );
-};
+  )
+}
 
-export default Banner;
-
+export default Banner
