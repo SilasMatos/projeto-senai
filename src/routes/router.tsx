@@ -1,7 +1,7 @@
 import React from 'react'
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom'
 import Layout from '../layout/layout'
-import '../styles/index.css'
+import '../index.css'
 import LandingPage from '../features/landing-page/page'
 import Dashboard from '../features/dashboard/page'
 
