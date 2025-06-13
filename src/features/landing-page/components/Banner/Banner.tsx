@@ -9,13 +9,13 @@ interface BannerItemProps {
 // Componente para um item individual do banner
 const BannerItem: React.FC<BannerItemProps> = ({ imageUrl, title }) => {
   return (
-    // Ajusta a largura para acomodar 5 itens em telas médias/grandes (md:w-1/5)
-    <div className="relative w-full md:w-1/5 h-[600px] group overflow-hidden">
+    // Ajusta a largura para acomodar 5 itens em telas médias/grandes (md:w-1/4)
+    <div className="relative w-full md:w-1/4 h-[600px] group overflow-hidden">
       {/* Imagem de fundo */}
       <div
-        className="absolute inset-0 bg-cover bg-center transition-transform duration-300 ease-in-out group-hover:scale-110 "
+        className="absolute inset-0 bg-cover bg-center transition-transform duration-300 ease-in-out group-hover:scale-110 image-banner "
         // Carrega a imagem da pasta public
-        style={{ backgroundImage: `url(${process.env.PUBLIC_URL}${imageUrl})` }}
+        // style={{ backgroundImage: `url(${process.env.PUBLIC_URL}${imageUrl})` }}
       ></div>
 
       {/* Overlay escuro simples */}
@@ -39,7 +39,7 @@ const Banner: React.FC = () => {
   // Array com os itens do banner, incluindo o novo item genérico
   const bannerItems = [
     {
-      imageUrl: '/images/Imagens/001-Comunidade Maker.jpg',
+      imageUrl: '/images/Imagens/001-ComunidadeMaker.jpg',
       title: 'Comunidade Maker'
     },
     {
@@ -65,9 +65,90 @@ const Banner: React.FC = () => {
     <section className="w-full">
       {/* Mantém o flex-col para mobile e flex-row para desktop */}
       <div className="flex flex-col md:flex-row">
-        {bannerItems.map((item, index) => (
-          <BannerItem key={index} imageUrl={item.imageUrl} title={item.title} />
-        ))}
+        <div className="relative w-full md:w-1/4 h-[600px] group overflow-hidden">
+          {/* Imagem de fundo */}
+          <div
+            className="absolute inset-0 bg-cover bg-center transition-transform duration-300 ease-in-out group-hover:scale-110 image-banner1 "
+            // Carrega a imagem da pasta public
+            // style={{ backgroundImage: `url(${process.env.PUBLIC_URL}${imageUrl})` }}
+          ></div>
+
+          {/* Overlay escuro simples */}
+          <div className="absolute inset-0 bg-black bg-opacity-40 transition-opacity duration-300 ease-in-out group-hover:bg-opacity-50"></div>
+
+          {/* Texto posicionado no canto inferior esquerdo, mas mais acima */}
+          {/* Corrigido o 'left-' para 'left-4' para posicionamento */}
+          <div className="absolute bottom-8 left-12 flex flex-col items-start">
+            <div className="transform -rotate-90 whitespace-nowrap origin-bottom-left">
+              <h2 className="text-white text-xl font-semibold tracking-wider uppercase">
+                Comunidade Maker
+              </h2>
+            </div>
+          </div>
+        </div>
+        <div className="relative w-full md:w-1/4 h-[600px] group overflow-hidden">
+          {/* Imagem de fundo */}
+          <div
+            className="absolute inset-0 bg-cover bg-center transition-transform duration-300 ease-in-out group-hover:scale-110 image-banner2 "
+            // Carrega a imagem da pasta public
+            // style={{ backgroundImage: `url(${process.env.PUBLIC_URL}${imageUrl})` }}
+          ></div>
+
+          {/* Overlay escuro simples */}
+          <div className="absolute inset-0 bg-black bg-opacity-40 transition-opacity duration-300 ease-in-out group-hover:bg-opacity-50"></div>
+
+          {/* Texto posicionado no canto inferior esquerdo, mas mais acima */}
+          {/* Corrigido o 'left-' para 'left-4' para posicionamento */}
+          <div className="absolute bottom-8 left-12 flex flex-col items-start">
+            <div className="transform -rotate-90 whitespace-nowrap origin-bottom-left">
+              <h2 className="text-white text-xl font-semibold tracking-wider uppercase">
+                Biblioteca Maker
+              </h2>
+            </div>
+          </div>
+        </div>
+        <div className="relative w-full md:w-1/4 h-[600px] group overflow-hidden">
+          {/* Imagem de fundo */}
+          <div
+            className="absolute inset-0 bg-cover bg-center transition-transform duration-300 ease-in-out group-hover:scale-110 image-banner3 "
+            // Carrega a imagem da pasta public
+            // style={{ backgroundImage: `url(${process.env.PUBLIC_URL}${imageUrl})` }}
+          ></div>
+
+          {/* Overlay escuro simples */}
+          <div className="absolute inset-0 bg-black bg-opacity-40 transition-opacity duration-300 ease-in-out group-hover:bg-opacity-50"></div>
+
+          {/* Texto posicionado no canto inferior esquerdo, mas mais acima */}
+          {/* Corrigido o 'left-' para 'left-4' para posicionamento */}
+          <div className="absolute bottom-8 left-12 flex flex-col items-start">
+            <div className="transform -rotate-90 whitespace-nowrap origin-bottom-left">
+              <h2 className="text-white text-xl font-semibold tracking-wider uppercase">
+                Lab Maker
+              </h2>
+            </div>
+          </div>
+        </div>
+        <div className="relative w-full md:w-1/4 h-[600px] group overflow-hidden">
+          {/* Imagem de fundo */}
+          <div
+            className="absolute inset-0 bg-cover bg-center transition-transform duration-300 ease-in-out group-hover:scale-110 image-banner4 "
+            // Carrega a imagem da pasta public
+            // style={{ backgroundImage: `url(${process.env.PUBLIC_URL}${imageUrl})` }}
+          ></div>
+
+          {/* Overlay escuro simples */}
+          <div className="absolute inset-0 bg-black bg-opacity-40 transition-opacity duration-300 ease-in-out group-hover:bg-opacity-50"></div>
+
+          {/* Texto posicionado no canto inferior esquerdo, mas mais acima */}
+          {/* Corrigido o 'left-' para 'left-4' para posicionamento */}
+          <div className="absolute bottom-8 left-12 flex flex-col items-start">
+            <div className="transform -rotate-90 whitespace-nowrap origin-bottom-left">
+              <h2 className="text-white text-xl font-semibold tracking-wider uppercase">
+                Reprodução de Projetos
+              </h2>
+            </div>
+          </div>
+        </div>
       </div>
     </section>
   )
