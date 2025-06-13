@@ -18,7 +18,7 @@ import {
 const getAuthHeaders = () => {
   const token = localStorage.getItem('accessTokenIntegrado')
   return {
-    Authorization: `Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJhdXRoLWFwaSIsInN1YiI6InNpbGFzbWF0b3N5bUBnbWFpbC5jb20iLCJleHAiOjE3NDk0MDM0NjN9.8s4fVs9qPIPd0JE28eo54BROFLjVL7lJq_cF3dGEuic`
+    Authorization: `Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpCJ9.eyJpc3MiOiJhdXRoLWFwaSIsInN1YiI6InNpbGFzbWF0b3N5bUBnbWFpbC5jb20iLCJleHAiOjE3NDk4MzQxMTl9.2LvZ8IbE3kUmbTXLmN0O8HEbIOETpwmGDit7UzReM8M`
   }
 }
 
@@ -284,10 +284,70 @@ export async function getUnidadesCurriculares() {
 
 // Projetos
 export async function getProjetos() {
-  const response = await axiosInstance.get('/api/v1/senai/projeto/findAll', {
-    headers: getAuthHeaders()
-  })
-  return response.data
+  // Mock data para projetos
+  const mockProjetos = [
+    {
+      uuid: '9cfdf9cc-a657-4800-9acd-104e04f0da9b',
+      titulo: 'Sistema de Gestão Escolar com IA',
+      descricao:
+        'Projeto interdisciplinar desenvolvido para automatizar tarefas administrativas em escolas usando inteligência artificial.',
+      curso: 'Engenharia de Software',
+      turma: '5º Semestre -A',
+      labMaker: true,
+      participouSaga: false,
+      itinerario: true,
+      unidadeCurricular: {
+        uuid: '29b54d18-f4bb-4482-8230-d49448554d9e',
+        nome: 'Desenvolvimento Web com Java',
+        descricao:
+          'Unidade curricular voltada para o desenvolvimento de aplicações web utilizando Java, Spring Boot, padrões RESTful e melhores práticas de arquitetura.',
+        cargaHoraria: '60h',
+        criadoEm: '2025-06-03T00:10:41.278259',
+        atualizadoEm: '2025-06-03T00:10:41.278259'
+      },
+      liderProjeto: {
+        uuid: '612a782a-5366-49b4-8b3a-36d1e7d9ac78',
+        usuarios: {
+          uuid: '1613ea3b-3210-4001-90a4-d2bb4cbb9382',
+          usuario: 'Ana',
+          senha: '$2a$10$eVtRFm6smfu27sftls3k3OX/tL8V4YTwnpeMvdIJx.CPIwjeSOhDi',
+          email: 'ana.c.nascimento8@ba.estudante.senai.br',
+          tipo: 'VISITANTE',
+          status: 'ATIVO',
+          criadoEm: '2025-06-02T23:37:36.121558',
+          atualizadoEm: '2025-06-02T23:37:36.121558'
+        },
+        matricula: '20250001',
+        curso: 'Engenharia de Software',
+        telefonePessoal: '(11) 91234-5678',
+        telefoneProfissional: '(11) 3344-5566',
+        linkedin: 'https://www.linkedin.com/in/joaodasilva',
+        endereco: {
+          uuid: '11a13511-e4c5-4fdd-be9b-348cf5b95782',
+          cep: '01001-000',
+          logradouro: 'Rua das Flores',
+          numero: 123,
+          complemento: 'Apto 45',
+          bairro: 'Centro',
+          cidade: 'São Paulo',
+          estado: 'SP',
+          pais: 'Brasil'
+        },
+        status: 'ATIVO',
+        criadoEm: '2025-06-02T23:51:04.740426',
+        atualizadoEm: '2025-06-02T23:51:04.740426'
+      },
+      bannerUrl: 'https://example.com/banners/projeto-gestao-escolar.png',
+      codigo: 'PROJ-24B8F1',
+      visibilidadeCodigo: 'PUBLICO',
+      visibilidadeAnexos: 'PRIVADO',
+      status: 'ATIVO',
+      criadoEm: '2025-06-03T00:19:31.110399',
+      atualizadoEm: '2025-06-03T00:19:31.110399'
+    }
+  ]
+
+  return mockProjetos
 }
 
 // Disciplinas

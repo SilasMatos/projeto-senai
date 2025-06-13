@@ -21,9 +21,6 @@ const LoginForm = () => {
     '@gmail.com'
   ]
 
-  const validateEmailDomain = (email: string): boolean => {
-    return allowedDomains.some(domain => email.endsWith(domain))
-  }
   const loginMutation = useLoginAuth({
     onSuccess: data => {
       console.log('Login bem-sucedido:', data)
@@ -49,25 +46,15 @@ const LoginForm = () => {
       setIsLoading(false)
     }
   })
-
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault()
     setError('')
     setIsLoading(true)
 
-    if (!validateEmailDomain(formData.email)) {
-      setError(
-        'Por favor, use um email institucional do SENAI (@ba.estudante.senai.br ou @ba.senai.br).'
-      )
-      setIsLoading(false)
-      return
-    }
-
-    // Fazer login com a API
-    loginMutation.mutate({
-      login: formData.email,
-      senha: formData.password
-    })
+    // Simular login bem-sucedido e navegar diretamente
+    setTimeout(() => {
+      navigate('/app')
+    }, 1000) // Delay de 1 segundo para simular carregamento
   }
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -91,15 +78,10 @@ const LoginForm = () => {
 
       console.log('Email do Google:', email)
 
-      if (!validateEmailDomain(email)) {
-        setError(
-          'Login com Google falhou: Por favor, use um email institucional do SENAI.'
-        )
-        setIsLoading(false)
-        return
-      }
-
-      googleLoginMutation.mutate(credentialResponse.credential)
+      // Simular login bem-sucedido e navegar diretamente
+      setTimeout(() => {
+        navigate('/app')
+      }, 1000) // Delay de 1 segundo para simular carregamento
     } catch (err) {
       console.error('Erro ao decodificar token do Google', err)
       setError(
@@ -130,7 +112,6 @@ const LoginForm = () => {
             id="email"
             name="email"
             type="email"
-            required
             value={formData.email}
             onChange={handleChange}
             disabled={isLoading}
@@ -150,7 +131,6 @@ const LoginForm = () => {
             id="password"
             name="password"
             type="password"
-            required
             value={formData.password}
             onChange={handleChange}
             disabled={isLoading}

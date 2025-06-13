@@ -27,9 +27,9 @@ const Routers: React.FC = () => {
             <Route
               path="/app"
               element={
-                <Private>
-                  <Layout />
-                </Private>
+                // <Private>
+                <Layout />
+                // </Private>
               }
             >
               <Route index element={<ProjectsPage />} />
